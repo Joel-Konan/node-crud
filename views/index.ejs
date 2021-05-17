@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Node CRUD</title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="/javascripts/jquery.min.js"></script>
+  </head>
+  <body>
+    <%- include ./Partials/header %>
+    <div class="main">
+      <div class="container" style="position: absolute; top: 45px; left: 40.8%; width: auto; padding: 0; margin: 0;">
+        <%- include messages %>
+      </div>
+      <div class="content">
+        <% if(theBlogs.length > 0){%>
+            <%theBlogs.forEach(blog =>{%>
+              
+                <div class="col-4 card_container">
+                  <div class="card">
+                    <% if(blog.image) {%>
+                      <div class="card-img" style="background: url(/images/blogs/<%=blog.image%>); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                      </div>
+                    <%}else{%>
+                      <p class="illustration">Image du Blog</p>
+                    <%}%>
+                    <div class="card-body">
+                      <h5 class="card-title"><%=blog.title%></h5>
+                      <p class="card-text" style="height: 45px; overflow-y: auto;"><%=blog.description%></p>
+                    </div>
+                    <div class="card-footer">
+                      <a href="/blog/edit/<%=blog._id%>" class="col-5 mr-5 btn btn-success">Edit</a>
+                      <a href="/blog/delete/<%=blog._id%>" class="col-5 btn btn-danger">Delete</a>
+                    </div>
+                  </div>
+                </div>
+
+            <%})%>
+        <%} else{%>
+          <p style="width:100%; text-align: center; padding: 20px 0; background-color: black; color: white; font-size: 20px;">Aucun blog trouvé</p>
+        <%}%>
+            
+      </div>
+    </div>
+
+
+
+    <script src="/javascripts/bootstrap.min.js"></script>
+  </body>
+</html>

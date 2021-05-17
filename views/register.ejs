@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription</title>
+    <script src="/javascripts/jquery.min.js"></script>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/blog.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+  <div class="header_form_blog">
+    <%- include ./Partials/header %>
+  </div>
+  <div>
+    <div class="container" style="position: absolute; top: 55px; left: 39%; width: auto; padding: 0; margin: 0;">
+      <%- include messages %>
+    </div>
+    <div class="form_div">
+      <div class="container">
+          <form action="/user/register" method="POST">
+            <div class="form-group">
+              <label for="exampleInputEmail">Nom <span>*</span></label>
+              <input type="text" name="nom" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail">Prenom <span>*</span></label>
+              <input type="text" name="prenom" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail">Email <span>*</span></label>
+              <input type="email" name="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp">
+            </div>
+            <div class="form-row">
+  
+              <div class="col-6">
+                <label for="exampleInputPassword">Mot de passe <span>(min: 8) *</span></label>
+                <input type="password" name="password" class="form-control" id="exampleInputPassword">
+              </div>
+  
+              <div class="col-6">
+                <label for="exampleInputPassword">Confirmer mdp <span>*</span></label>
+                <input type="password" name="confPass" class="form-control" id="exampleInputPassword">
+              </div>
+  
+            </div>
+            <button type="submit" class="col-12 mt-4 btn btn-success">Inscription</button>
+          </form>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <script src="/javascripts/bootstrap.min.js"></script>
+</body>
+</html>

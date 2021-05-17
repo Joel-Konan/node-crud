@@ -1,0 +1,24 @@
+<div class="topBar">
+    <div class="logo">
+      <a href="/"><p>Node-CRUD</p></a>
+    </div>
+    <div class="menu">
+      <ul>
+        <a href="/blog/create"><li>Créer un blog</li></a>
+        <a href="/blog/edit"><li>Modifier un blog</li></a>
+        <a href="/blog/delete"><li>Supprimer un blog</li></a>
+      </ul>
+    </div>
+
+    <div class="log-div">
+      <ul>
+          <%if(locals.user){%>
+            <li><a href="#"><%= locals.user.prenom %></li></a>
+            <li><a href="/user/logout">Deconnexion</li></a>
+            <%}else {%>
+                <li><a href="/user/login">Connexion</li></a>
+                <li><a href="/user/register">Inscription</li></a>
+            <%}%>
+      </ul>
+    </div>
+  </div>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Création de blog</title>
+    <script src="/javascripts/jquery.min.js"></script>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/blog.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+  <div class="header_form_blog">
+  <%- include ./Partials/header %>
+  </div>
+  <div>
+    <div class="container" style="position: absolute; top: 55px; left: 34.8%; width: auto; padding: 0; margin: 0;">
+      <%- include messages %>
+    </div>
+    <div class="form_div">
+        <div class="container">
+            <form action="/blog/create" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                  <label for="exampleInputTitle">Titre <span>*</span></label>
+                  <input type="text" name="title" class="form-control" id="exampleInputTitle" aria-describedby="emailHelp">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputTextarea">Description <span>*</span></label>
+                  <textarea name="description" class="form-control" id="exampleInputTextarea" cols="10" rows="4.5"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputFile">Image</label>
+                  <input type="file" name="blog_image" class="form-control-file" id="exampleInputFile">
+                </div>
+                <button type="submit" class="col-12 mt-4 btn btn-success">Créer</button>
+            </form>
+        </div>
+    </div>
+  </div>
+
+
+  <script src="/javascripts/bootstrap.min.js"></script>
+</body>
+</html>
